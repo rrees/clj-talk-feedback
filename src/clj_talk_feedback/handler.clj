@@ -15,4 +15,4 @@
 
 (def app
   (wrap-defaults app-routes
-      (if production? secure-site-defaults site-defaults)))
+      (if production? (assoc secure-site-defaults :proxy true) site-defaults)))
